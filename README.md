@@ -1,16 +1,16 @@
 # Bootstrap w/ Webpack
 
-Include [Bootstrap](https://getbootstrap.com)'s source Sass and individual JavaScript plugins with [Webpack](https://webpack.js.org).
+Includes [Bootstrap](https://getbootstrap.com)'s source Sass and individual JavaScript plugins with [Webpack](https://webpack.js.org).
 
-## Edit in browser
+<!--- ## Edit in browser -->
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/twbs/examples/tree/main/webpack?file=src%2Findex.html)
+<!--- [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/twbs/examples/tree/main/webpack?file=src%2Findex.html) -->
 
 ## How to use
 
 ```sh
-git clone https://github.com/twbs/examples.git
-cd examples/webpack/
+git clone https://github.com/beljjvalentin/lambton_mun.git
+cd examples/lambton_mun/
 npm install
 npm start
 ```
