@@ -21,6 +21,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'members.html',
       template: './src/members.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'policy.html',
+      template: './src/policy.html',
+      chunks: ['./src/js/pdfobject.min.js'],
     })
   ],
   module: {
