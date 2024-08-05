@@ -17,7 +17,11 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' })
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      filename: 'members.html',
+      template: './src/members.html'
+    })
   ],
   module: {
     rules: [
