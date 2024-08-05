@@ -25,7 +25,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'policy.html',
       template: './src/policy.html',
-      chunks: ['./src/js/pdfobject.min.js'],
+      chunks: ['main', './src/js/pdfobject.min.js'],
     })
   ],
   module: {
