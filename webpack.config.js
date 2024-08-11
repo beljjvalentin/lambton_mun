@@ -17,7 +17,29 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' })
+    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({
+      filename: 'members.html',
+      template: './src/members.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'policy.html',
+      template: './src/policy.html',
+      chunks: ['main', './src/js/pdfobject.min.js'],
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'goals.html',
+      template: './src/goals.html'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'contact.html',
+      template: './src/contact.html',
+      chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'events.html',
+      template: './src/events.html'
+    }),
   ],
   module: {
     rules: [
