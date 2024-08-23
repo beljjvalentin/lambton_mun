@@ -14,3 +14,6 @@ cd examples/lambton_mun/
 npm install
 npm start
 ```
+
+## Source code location
+```cd ./src/index.html```
