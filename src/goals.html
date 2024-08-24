@@ -17,9 +17,53 @@
     <meta name="theme-color" content="#009edb">
 
     <style>
-        .blog-footer{
+        .blog-footer {
             width: 100%;
         }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+
+        .section-description {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .section-description div{
+            margin-top: 70px;
+        }
+
+        .section-mission div{
+            margin-top: 50px;
+        }
+
+        .section-mission {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+
+        .section-description img {
+            max-width: 350px;
+            width: 100%;
+            margin-left: 20px; 
+            margin-top: 40px;
+        }
+
+        .section-mission img {
+            max-width: 350px;
+            width: 100%;
+            margin-right: 20px; 
+        }
+
     </style>
 </head>
 <body>
@@ -50,55 +94,44 @@
                 <a class="p-2 link-secondary" href="./events.html">Upcoming events</a>
                 <a class="p-2 link-secondary" href="./policy.html">Policy and conditions</a>
                 <a class="p-2 link-secondary" href="./contact.html">Contact us</a>
-<!--                <a class="p-2 link-secondary" href="./join.html">Join our team</a>-->
             </nav>
         </div>
     </div>
 
     <main class="container">
-        <div>
-            <p><b>MUN Lambton College 2024 aims to:</b></p>
-            <ul>
-                <li>Demonstrate the effectiveness of peaceful dialogue as a tool for conflict resolution.</li>
-                <li>Familiarize delegates with the concept of diplomatic ethics.</li>
-                <li>Illustrate the position that youth can participate in making socially significant decisions.</li>
-                <li>Provide active youth a platform for developing communicative, public speaking, and
-                    leadership skills.</li>
-                <li>Affirm the importance of cooperation at all levels to achieve goals, including maintaining
-                    peace and security.</li>
-            </ul>
-            <p>
-                <b>Description</b>
-            </p>
-            <p>
-                The Lambton College Sarnia Model United Nations (MUN) is a student-led organization that simulates the workings of the United Nations. Our group provides a platform for students to engage in diplomacy, debate, and negotiation on global issues. Through realistic simulations of UN committees, members develop a deep understanding of international relations, the complexities of global governance, and the importance of collaborative problem-solving.
-            </p>
-            <p>
-                <b>Vision</b>
-            </p>
-            <p>
-                Our vision is to cultivate a community of informed, empathetic, and proactive global citizens. We aim to inspire students to become leaders who are committed to addressing the world's most pressing challenges through diplomacy, dialogue, and mutual respect.
-            </p>
+        <!-- Description Section -->
+        <div class="section-description">
+            <div>
+                <h2 class="blog-post-title">Description</h2>
+                <p><b>The Lambton Model United Nations (MUN)</b> is a student-led organization that simulates the workings of the United Nations. Our group provides a platform for students to engage in diplomacy, debate, and negotiation on global issues. Through realistic simulations of UN committees, members develop a deep understanding of international relations, the complexities of global governance, and the importance of collaborative problem-solving.</p>
+                <br><h2 class="blog-post-title">Vision</h2>
+                <p>Our vision is cultivating a community of informed, empathetic, and proactive global citizens. We aim to inspire students to become leaders committed to addressing the world's most pressing challenges through diplomacy, dialogue, and mutual respect.</p>
+            </div>
+            <img src="https://beljjvalentin.github.io/lambton_mun/img/UN_Picture1.jpg" alt="Description Image">
+        </div>
 
-            <p><b>Mission</b></p>
-            <p>
-                Our mission is to:
+    
+
+        <!-- Mission Section -->
+        <div class="section-mission">
+            <img src="https://beljjvalentin.github.io/lambton_mun/img/UN_Picture2.jpg" alt="Mission Image">
+            <div>
+                <h2 class="blog-post-title">Mission</h2>
+                <p><b>Educate and Empower:</b> Provide students with the knowledge, skills, and confidence to engage effectively in international diplomacy and decision-making processes.</p>
+                <br>
+                <p><b>Foster Understanding:</b> Promote a deeper understanding of global issues, cultural diversity, and the principles of the United Nations.</p>
+                <br>
+                <p><b>Develop Skills:</b> Enhance students' skills in public speaking, critical thinking, negotiation, and teamwork through active participation in MUN conferences and activities.</p>
+                <br>
+                <p><b>Build Community:</b> Create a supportive and inclusive environment where students can share their ideas, experiences, and perspectives, fostering a sense of global citizenship and community.</p>
                 <br><br>
-                Educate and Empower: Provide students with the knowledge, skills, and confidence to engage effectively in international diplomacy and decision-making processes.
-                <br><br>
-                Foster Understanding: Promote a deeper understanding of global issues, cultural diversity, and the principles of the United Nations.
-                <br><br>
-                Develop Skills: Enhance students' skills in public speaking, critical thinking, negotiation, and teamwork through active participation in MUN conferences and activities.
-                <br><br>
-                Build Community: Create a supportive and inclusive environment where students can share their ideas, experiences, and perspectives, fostering a sense of global citizenship and community.
-                <br><br>
-                By participating in the Lambton College Sarnia MUN, students will gain invaluable insights into the workings of international institutions, build lasting friendships, and develop a lifelong commitment to global peace and justice.
-            </p>
+                <p>By participating in the Lambton MUN, students will gain valuable insights into the workings of international institutions, build lasting friendships, and develop a lifelong commitment to global peace and justice.</p>
+            </div>
         </div>
     </main>
-<footer class="blog-footer">
-    <p>Webpage built for <a href="https://beljjvalentin.github.io/lambton_mun/">Lambton MUN</a></p>
-</footer>
 
+    <footer class="blog-footer">
+        <p>Webpage built for <a href="https://beljjvalentin.github.io/lambton_mun/">Lambton MUN</a></p>
+    </footer>
 </body>
 </html>
