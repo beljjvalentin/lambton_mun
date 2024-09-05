@@ -3,6 +3,11 @@
             height: 600px;
             border: 1px solid #ccc;
             overflow: auto;
+        }
+        .blog-footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
         }</style><script defer="defer" src="main.js"></script></head><body><div class="container"><header class="blog-header py-1"><div class="row flex-nowrap justify-content-between align-items-center"><div class="col-4 pt-1"><a class="link-secondary" href="./"><img src="https://lambtonmun.ca/img/Lambton-MUN-2.svg" width="100" class="img-responsive" alt="Main logo"></a></div><div class="col-4 text-center"><a class="blog-header-logo text-dark" href="./">Lambton MUN</a></div><div class="col-4 d-flex justify-content-end align-items-center"><a class="link-secondary" href="#" aria-label="Search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="mx-3" role="img" viewBox="0 0 24 24"><title>Search</title><circle cx="10.5" cy="10.5" r="7.5"/><path d="M21 21l-5.2-5.2"/></svg> </a><a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a></div></div></header><div class="nav-scroller py-1 mb-2"><nav class="nav d-flex justify-content-between"><a class="p-2 link-secondary" href="./goals.html">Our goals and values</a> <a class="p-2 link-secondary" href="./members.html">Our members</a> <a class="p-2 link-secondary" href="./events.html">Upcoming events</a> <a class="p-2 link-secondary" href="./policy.html">Policy and conditions</a> <a class="p-2 link-secondary" href="./contact.html">Contact us</a></nav></div></div><main class="container"><div id="pdfViewer"></div><script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script><script>const pdfUrl = 'https://lambtonmun.ca/img/Statute_LMUN_2024_Version_1.pdf'; // Replace with your PDF file URL
 
         // Initialize PDF.js
@@ -11,35 +16,43 @@
         // The workerSrc property points to the location of the pdf.worker.js file
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.worker.min.js';
 
-        // Asynchronous download of PDF
+        // Fetch the PDF document
         pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
-            console.log('PDF loaded');
+            console.log(`PDF loaded. Number of pages: ${pdf.numPages}`);
 
-            // Fetch the first page
-            pdf.getPage(1).then(page => {
-                console.log('Page loaded');
+            // Loop through each page
+            for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+                // Create a container div for each page
+                const pageDiv = document.createElement('div');
+                pageDiv.className = 'pdf-page';
+                document.getElementById('pdfViewer').appendChild(pageDiv);
 
+                // Render the page
+                renderPage(pdf, pageNum, pageDiv);
+            }
+        }).catch(error => console.error('Error loading the PDF:', error));
+
+        function renderPage(pdf, pageNumber, pageContainer) {
+            pdf.getPage(pageNumber).then(page => {
                 const scale = 1.5;
                 const viewport = page.getViewport({ scale });
 
-                // Prepare canvas using PDF page dimensions
+                // Create a canvas element for each page
                 const canvas = document.createElement('canvas');
                 const context = canvas.getContext('2d');
                 canvas.height = viewport.height;
                 canvas.width = viewport.width;
 
-                // Append canvas to the #pdfViewer div
-                document.getElementById('pdfViewer').appendChild(canvas);
+                // Append canvas to the page container
+                pageContainer.appendChild(canvas);
 
-                // Render PDF page into canvas context
+                // Render the page into the canvas
                 const renderContext = {
                     canvasContext: context,
                     viewport: viewport
                 };
                 page.render(renderContext).promise.then(() => {
-                    console.log('Page rendered');
+                    //console.log(`Page ${pageNumber} rendered`);
                 });
-            });
-        }, reason => {
-            console.error(reason);
-        });</script></main><footer class="blog-footer"><p>Webpage built for <a href="https://lambtonmun.ca/">Lambton MUN</a></p></footer></body></html>
+            }).catch(error => console.error(`Error rendering page ${pageNumber}:`, error));
+        }</script></main><footer class="blog-footer"><p>Webpage built for <a href="https://lambtonmun.ca/">Lambton MUN</a></p></footer></body></html>
