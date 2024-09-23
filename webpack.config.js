@@ -43,9 +43,14 @@ module.exports = {
   ],
   module: {
     rules: [
+
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         loader: 'file-loader',
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext][query]', // Output path for images
+        },
         options: {
           publicPath: 'img',
         }
