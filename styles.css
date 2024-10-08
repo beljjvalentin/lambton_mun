@@ -19,3 +19,7 @@ h1 {
 .blog-header-logo{
     text-decoration: none;
 }
+
+.nav {
+    position: sticky;
+}
